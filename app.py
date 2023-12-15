@@ -6,6 +6,7 @@ from firebase_admin import credentials, firestore
 from flask import Flask
 import threading
 import time
+import os
 
 app = Flask(__name__)
 env_config = os.getenv("PROD_APP_SETTINGS", "config.DevelopmentConfig")
