@@ -216,4 +216,4 @@ def trigger_update():
     return 'Data updated!'
 
 if __name__ == '__main__':
-    app.run(debug=False) Set debug=False for production
+    app.run(debug=False)
