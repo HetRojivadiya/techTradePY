@@ -207,11 +207,7 @@ def update_data():
     # --------------------------------------------------------------------------------------------------------------------------
     print("all set")
 
-# Function to run update_data() every 3 minutes
-def schedule_data_update():
-    while True:
-        update_data()
-        time.sleep(180)  # 180 seconds = 3 minutes
+
 
 # Route to trigger the update manually (optional)
 @app.route('/update', methods=['GET'])
@@ -220,10 +216,4 @@ def trigger_update():
     return 'Data updated!'
 
 if __name__ == '__main__':
-    # Start a thread to run update_data() every 3 minutes
-    update_thread = threading.Thread(target=schedule_data_update)
-    update_thread.daemon = True
-    update_thread.start()
-
-    # Start Flask server
-    app.run(debug=True)  # Set debug=False for production
+    app.run(debug=False) Set debug=False for production
